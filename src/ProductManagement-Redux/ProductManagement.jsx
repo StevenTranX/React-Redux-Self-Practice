@@ -1,16 +1,19 @@
 import React from 'react';
-import ProductItem from './Cart';
+
 import ProductList from './ProductList';
-import ProductForm from './ProductDetails';
+import ProductDetails from './ProductDetails';
+import Cart from './Cart';
 const ProductManagement = () => {
   return (
     <div className="container">
-      <div>
-        <ProductForm />
+      <h1 className="text-center text-primary">Shopping Cart Redux</h1>
+      <div className="d-flex justify-content-end mb-5">
+        <button className="btn btn-success">Cart</button>
       </div>
-      <div>
-        <ProductList />
-      </div>
+
+      <ProductList />
+      <ProductDetails />
+      <Cart />
     </div>
   );
 };
