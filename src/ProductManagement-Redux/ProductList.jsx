@@ -1,11 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectProduct } from '../redux/productSlice';
+import { selectProduct, addToCart } from '../redux/productSlice';
 const ProductList = () => {
   const { products } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const handleSelect = (product) => {
     dispatch(selectProduct(product));
+  };
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
   };
   console.log(products);
   return (
@@ -28,7 +31,12 @@ const ProductList = () => {
                 >
                   Details
                 </button>
-                <button className="btn btn-success">Add To Cart</button>
+                <button
+                  className="btn btn-success"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add To Cart
+                </button>
               </div>
             </div>
           </div>
